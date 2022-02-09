@@ -1,0 +1,85 @@
+@noteNotMatchingBookmarks               TRUE
+@createNewDocumentFromTemplate          credHipo.dotx
+fin                                     
+valad                                   
+credito                                 
+plazotot                                
+dirviv                                  
+tipo                                    libre
+cargas                                  
+nueva                                   Si
+estadcivil                              Soltero/a
+estadcivil_conyu                        
+regimen                                 separacion
+regimen_conyu                           
+dni_nie                                 
+dni_nie_conyu                           
+ape1                                    
+ape1_conyu                              
+ape2                                    
+ape2_conyu                              
+fechan                                  
+fechan_conyu                            
+nombrecli                               buhbyv75df6t
+nombrecli_conyu                         
+fijo                                    No
+fijo_conyu                              
+temp                                    No
+temp_conyu                              
+aut                                     No
+aut_conyu                               
+otros                                   No
+otros_conyu                             No
+dom                                     
+dom_conyu                               
+cp                                      
+cp_conyu                                
+pob                                     
+pob_conyu                               
+prof                                    
+prof_conyu                              
+nomemp                                  
+nomemp_conyu                            
+activemp                                
+activemp_conyu                          
+antiguo                                 
+antiguo_conyu                           
+posicion                                
+posicion_conyu                          
+diremp                                  
+diremp_conyu                            
+telemp                                  
+telemp_conyu                            
+fijosmen                                
+fijosmen_conyu                          
+varmen                                  
+varmen_conyu                            
+gastosalq                               
+gastosalq_conyu                         
+gastoshipo                              
+gastoshipo_conyu                        
+otrospres                               
+otrospres_conyu                         
+valorvivi                               
+valorvivi_conyu                         
+cargasvivi                              
+cargasvivi_conyu                        
+propiedad                               No
+propiedad_conyu                         
+escritura                               No
+escritura_conyu                         
+contratpriv                             No
+contratpriv_conyu                       
+otrosmas                                No
+otrosmas_conyu                          
+padres                                  No
+padres_conyu                            
+alquiler                                No
+alquiler_conyu                          
+otrosbipat                              
+otrosbipat_conyu                        
+cargasotrosbi                           
+cargasotrosbi_conyu                     
+antig                                   
+otrospat                                
+@saveDocumentAsAndClose                 buhbyv75df6t
