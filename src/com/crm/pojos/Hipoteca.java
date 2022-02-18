@@ -3,31 +3,11 @@ package com.crm.pojos;
 import java.sql.Timestamp;
 
 public class Hipoteca {
-	private int id;
-	private String ape1;
-	private String ape2;
-	private String Nombre;
-	private String dni_nie;
-	private Boolean fijo;
-	private Boolean temporal;
-	private Boolean autonomo;
-	private Boolean otro;
-	private String profesion;
-	private String domicilio;
-	private String poblacion;
-	private int codpost;
+	private int id,codpost, valadq, impcto, plazoTot, cargas;
+	private String ape1, ape2, Nombre, dni_nie, profesion, domicilio, poblacion, finalidad, dir_vivi, tipo_vivi, nueva,
+			estadocivil, regbienes, vinculo;
+	private Boolean fijo, temporal, autonomo, otro;
 	private Timestamp Fecha_nac;
-	private String finalidad;
-	private int valadq;
-	private int impcto;
-	private int plazoTot;
-	private String dir_vivi;
-	private String tipo_vivi;
-	private int cargas;
-	private String nueva;
-	private String estadocivil;
-	private String regbienes;
-	private String vinculo;
 
 	public int getId() {
 		return id;
