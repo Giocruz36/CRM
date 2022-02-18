@@ -1181,5 +1181,5 @@ public class PanelHipoteca extends JPanel implements Serializable {
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-	}// del public cerrar
+	}// del public ver
 }

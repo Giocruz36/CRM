@@ -1,9 +1,7 @@
 package com.crm.graficos;
 
 import java.awt.*;
-
 import java.awt.event.*;
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.sql.ResultSet;
@@ -12,10 +10,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
-
 import javax.swing.*;
 import javax.swing.table.*;
-
 import com.crm.auxiliares.Servicios;
 import com.crm.funcionalidades.giveFecha;
 import com.crm.persistencias.ConfigDir;
