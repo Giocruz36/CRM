@@ -107,7 +107,7 @@ public class PanelHipoteca extends JPanel implements Serializable {
 		dt.add(drc_vivi);
 
 		JLabel tp = new JLabel("tipo: ");
-		tp.setAlignmentX(Component.CENTER_ALIGNMENT);
+		tp.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(tp);
 		dt.add(Box.createRigidArea(new Dimension(5, 3)));
 		String[] gp1 = new String[] { "libre", "con cargos" };
@@ -127,34 +127,34 @@ public class PanelHipoteca extends JPanel implements Serializable {
 		dt.add(cargas);
 
 		JLabel nv = new JLabel("nueva: ");
-		nv.setAlignmentX(Component.CENTER_ALIGNMENT);
+		nv.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(nv);
 		dt.add(Box.createRigidArea(new Dimension(15, 3)));
 		String[] gp2 = new String[] { "Si", "No" };
 		op2 = new JComboBox<String>(gp2);
-		op2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		op2.setAlignmentX(Component.LEFT_ALIGNMENT);
 		op2.setMaximumSize(new Dimension(150, 200));
 		dt.add(op2);
 		dt.add(Box.createRigidArea(new Dimension(5, 3)));
 
 		JLabel ec = new JLabel("Estado Civil: ");
-		ec.setAlignmentX(Component.CENTER_ALIGNMENT);
+		ec.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(ec);
 		dt.add(Box.createRigidArea(new Dimension(5, 3)));
 		String[] gp3 = new String[] { "Soltero/a", "Casado/a", "Divorciado/a", "Separado/a", "Divorciado/a" };
 		op3 = new JComboBox<String>(gp3);
-		op3.setAlignmentX(Component.CENTER_ALIGNMENT);
+		op3.setAlignmentX(Component.LEFT_ALIGNMENT);
 		op3.setMaximumSize(new Dimension(150, 200));
 		dt.add(op3);
 		dt.add(Box.createRigidArea(new Dimension(5, 3)));
 
 		JLabel rb = new JLabel("Regimen de Bienes: ");
-		rb.setAlignmentX(Component.CENTER_ALIGNMENT);
+		rb.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(rb);
 		dt.add(Box.createRigidArea(new Dimension(15, 3)));
 		String[] gp4 = new String[] { "separacion", "gananciales", "participacion" };
 		op4 = new JComboBox<String>(gp4);
-		op4.setAlignmentX(Component.CENTER_ALIGNMENT);
+		op4.setAlignmentX(Component.LEFT_ALIGNMENT);
 		op4.setMaximumSize(new Dimension(150, 200));
 		dt.add(op4);
 		dt.add(Box.createRigidArea(new Dimension(0, 3)));
