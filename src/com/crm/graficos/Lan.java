@@ -67,7 +67,7 @@ public class Lan {
 		Dimension dim = tk.getScreenSize();
 		System.out.println(dim.width + "," + dim.height);
 		// no perder barra de tareas
-		marco.setSize(dim.width, dim.height - 24);
+		marco.setSize(dim.width-450, dim.height-55);
 		// haciendo el marco visible,soe,pre al final
 		// marco.setVisible(true);
 		// Properties prop = System.getProperties();

@@ -39,7 +39,7 @@ public class PanelHipoteca extends JPanel implements Serializable {
 	public JPanel PanelNorte() {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
-		panel.setPreferredSize(new Dimension(1275, 105));
+		panel.setPreferredSize(new Dimension(1275, 120));
 		panel.add(Box.createRigidArea(new Dimension(0, 3)));
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		panel.setBorder(BorderFactory.createLoweredBevelBorder());
@@ -65,17 +65,17 @@ public class PanelHipoteca extends JPanel implements Serializable {
 		JLabel fn = new JLabel(" FINALIDAD: ");
 		fn.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(fn);
-		dt.add(Box.createRigidArea(new Dimension(15, 3)));
-		finalidad = new JTextField(24);
-		finalidad.setMaximumSize(new Dimension(150, 75));
+		dt.add(Box.createRigidArea(new Dimension(10, 3)));
+		finalidad = new JTextField(20);
+		finalidad.setMaximumSize(new Dimension(20, 15));
 		finalidad.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(finalidad);
 		JLabel va = new JLabel(" CREDITO SOLICITADO:  Valor de adquisicion: ");
 		va.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(va);
 		dt.add(Box.createRigidArea(new Dimension(15, 3)));
-		adquisicion = new JTextField(30);
-		adquisicion.setMaximumSize(new Dimension(150, 200));
+		adquisicion = new JTextField(25);
+		adquisicion.setMaximumSize(new Dimension(20, 15));
 		adquisicion.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(adquisicion);
 
@@ -83,26 +83,26 @@ public class PanelHipoteca extends JPanel implements Serializable {
 		cr.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(cr);
 		dt.add(Box.createRigidArea(new Dimension(15, 3)));
-		credito = new JTextField(22);
-		credito.setMaximumSize(new Dimension(150, 200));
+		credito = new JTextField(15);
+		credito.setMaximumSize(new Dimension(20, 15));
 		credito.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(credito);
 
 		JLabel pl = new JLabel(" Plazo Total (meses): ");
 		pl.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(pl);
-		dt.add(Box.createRigidArea(new Dimension(15, 3)));
-		plazo = new JTextField(26);
-		plazo.setMaximumSize(new Dimension(150, 200));
+		dt.add(Box.createRigidArea(new Dimension(10, 3)));
+		plazo = new JTextField(10);
+		plazo.setMaximumSize(new Dimension(20, 19));
 		plazo.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(plazo);
 
 		JLabel vivi = new JLabel(" Direccion Vivienda: ");
 		vivi.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(vivi);
-		dt.add(Box.createRigidArea(new Dimension(15, 3)));
+		dt.add(Box.createRigidArea(new Dimension(8, 3)));
 		drc_vivi = new JTextField(19);
-		drc_vivi.setMaximumSize(new Dimension(150, 200));
+		drc_vivi.setMaximumSize(new Dimension(10, 19));
 		drc_vivi.setAlignmentX(Component.LEFT_ALIGNMENT);
 		dt.add(drc_vivi);
 

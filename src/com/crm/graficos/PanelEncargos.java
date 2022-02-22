@@ -175,8 +175,8 @@ public class PanelEncargos extends JPanel implements Serializable {
 		TableColumn column = null;
 		for (int i = 0; i < dtm.getColumnCount(); i++) {
 			column = tabla.getColumnModel().getColumn(i);
-			column.setMinWidth(179);
-			column.setPreferredWidth(179);
+			column.setMinWidth(188);
+			column.setPreferredWidth(206);
 		}
 		tabla.setBounds(0, 0, 1280, 780);
 		tabla.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
