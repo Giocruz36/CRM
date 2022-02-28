@@ -2,8 +2,15 @@ package com.crm.graficos;
 
 import java.awt.*;
 import java.io.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
 import javax.swing.*;
 import javax.swing.table.*;
+
+import com.crm.persistencias.ConfigDir;
+import com.crm.persistencias.MisConexiones;
 
 @SuppressWarnings("serial")
 public class PanelEncargos extends JPanel implements Serializable {
@@ -13,13 +20,13 @@ public class PanelEncargos extends JPanel implements Serializable {
 	private JComboBox<String> asunto, email, receptor;
 	private JButton ver, reg, borrar, imprimir;
 
-	public PanelEncargos() {
+	public PanelEncargos() throws SQLException {
 		setLayout(new BorderLayout());
 		add(PanelNorte(), BorderLayout.NORTH);
 		add(PanelSur(), BorderLayout.SOUTH);
 	}
 
-	private JPanel PanelNorte() {
+	private JPanel PanelNorte() throws SQLException {
 		JPanel panel = new JPanel();
 		panel.setLayout(new BorderLayout());
 		panel.setPreferredSize(new Dimension(1280, 150));
@@ -31,7 +38,8 @@ public class PanelEncargos extends JPanel implements Serializable {
 		return panel;
 	}
 
-	private JPanel PanelNorte1() {
+	@SuppressWarnings("unchecked")
+	private JPanel PanelNorte1() throws SQLException {
 		JPanel norte = new JPanel();
 		norte.setLayout(new FlowLayout(FlowLayout.CENTER));
 		norte.setPreferredSize(new Dimension(1280, 47));
@@ -50,8 +58,8 @@ public class PanelEncargos extends JPanel implements Serializable {
 		ems.setAlignmentX(Component.CENTER_ALIGNMENT);
 		norte.add(ems);
 		norte.add(Box.createRigidArea(new Dimension(0, 3)));
-		String[] gp2 = new String[] { "hipotecas", "Credito Personal", "Tarjeta de Envio" };
-		email = new JComboBox<String>(gp2);
+		//String[] gp2 = new String[] { "hipotecas", "Credito Personal", "Tarjeta de Envio" };
+		email = new JComboBox<String>(dameEmails());
 		email.setAlignmentX(Component.CENTER_ALIGNMENT);
 		email.setMaximumSize(new Dimension(100, 200));
 		norte.add(email);
@@ -186,5 +194,19 @@ public class PanelEncargos extends JPanel implements Serializable {
 		sp.setBorder(BorderFactory.createLoweredBevelBorder());
 		return sp;
 	}// ver tabla
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public Vector dameEmails() throws SQLException {
+		Vector v = new Vector();
+		try {
+		ResultSet rs = new MisConexiones().dameResultSetSimple(ConfigDir.getInstance().getProperty("consulta13"));
+		while(rs.next()) {
+			v.addElement(rs.getString("Email"));
+		}
+		}catch(Exception e1) {
+			e1.printStackTrace();
+		}
+		return v;
+	}
 
 }

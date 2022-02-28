@@ -9,20 +9,19 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 
 public class MisConexiones {
-	private Connection con;
-	private PreparedStatement ps;
+	private static Connection con;
+	private static PreparedStatement ps;
 	@SuppressWarnings("unused")
 	private Statement st;
-	private ResultSet rs;
+	private static ResultSet rs;
 	@SuppressWarnings("unused")
 	private String sentencia;
 	@SuppressWarnings("unused")
 	private String parametro;
 	@SuppressWarnings("unused")
 	private String parametro2;
-	private ConfigDir atrapo;
+	private static ConfigDir atrapo;
 
-	@SuppressWarnings("deprecation")
 	public MisConexiones() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		atrapo = ConfigDir.getInstance();
 		if (atrapo.getBooleanProperty("check"))
