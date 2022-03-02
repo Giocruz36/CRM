@@ -19,7 +19,6 @@ import com.crm.wordprocessing.WordProcessing;
 public class PanelEncargos extends JPanel implements Serializable {
 	DefaultTableModel dtm;
 	private JTable tabla;
-	private int j;
 	private JTextField c1, c2, dni1, dni2, fecha, domicilio, email1, telefono,ciudad;
 	private JComboBox<String> asunto, email, receptor;
 	private JButton ver, reg, borrar, imprimir;
@@ -51,7 +50,7 @@ public class PanelEncargos extends JPanel implements Serializable {
 		ast.setAlignmentX(Component.CENTER_ALIGNMENT);
 		norte.add(ast);
 		norte.add(Box.createRigidArea(new Dimension(0, 3)));
-		String[] gp1 = new String[] { "hipotecas", "Credito Personal", "Tarjeta de Envio" };
+		String[] gp1 = new String[] { "Despliegue","hipotecas", "Credito Personal", "Tarjeta de Envio" };
 		asunto = new JComboBox<String>(gp1);
 		asunto.setAlignmentX(Component.CENTER_ALIGNMENT);
 		asunto.setMaximumSize(new Dimension(100, 200));
@@ -214,7 +213,6 @@ public class PanelEncargos extends JPanel implements Serializable {
 		dtm.addColumn("dni_nie2");
 		
 		tabla = new JTable(dtm);
-		// tabla.addMouseListener(new GestorTabla());
 		TableColumn column = null;
 		for (int i = 0; i < dtm.getColumnCount(); i++) {
 			column = tabla.getColumnModel().getColumn(i);
@@ -250,7 +248,7 @@ public class PanelEncargos extends JPanel implements Serializable {
 				}
 			}
 		}
-	}
+	}//fin del añadir
 
 	public class GestorVer implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
@@ -282,6 +280,7 @@ public class PanelEncargos extends JPanel implements Serializable {
 					v.addElement(en.getDomicilio());
 					v.addElement(en.getCliente2());
 					v.addElement(en.getDni_nie2());
+					dtm.addRow(v);
 				}
 			}catch (Exception e1) {
 				e1.printStackTrace();
@@ -334,70 +333,19 @@ public class PanelEncargos extends JPanel implements Serializable {
 
 	public class GestorBorrar implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-
-			JFrame marcoBorrar = new JFrame("Borrar Encargos");
-			marcoBorrar.setLocationRelativeTo(null);
-			marcoBorrar.setSize(350, 200);
-			JPanel panelUsuario = new JPanel();
-			marcoBorrar.add(panelUsuario);
-			panelUsuario.setLayout(new BoxLayout(panelUsuario, BoxLayout.Y_AXIS));
-			JLabel add_txt = new JLabel("Esta a punto de borrar a un encargo ¿Desea Continuar?");
-			add_txt.setAlignmentX(Component.CENTER_ALIGNMENT);
-			panelUsuario.add(add_txt);
-			panelUsuario.add(Box.createRigidArea(new Dimension(0, 3)));
-
-			JTextField idBorrar = new JTextField(40);
-			idBorrar.setMaximumSize(new Dimension(70, 20));
-			idBorrar.setAlignmentX(Component.CENTER_ALIGNMENT);
-			idBorrar.setText("" + c1.getText());
-			panelUsuario.add(idBorrar);
-			panelUsuario.add(Box.createRigidArea(new Dimension(0, 3)));
-
-			JTextField NmbreBorrar = new JTextField(40);
-			NmbreBorrar.setMaximumSize(new Dimension(120, 20));
-			NmbreBorrar.setAlignmentX(Component.CENTER_ALIGNMENT);
-			NmbreBorrar.setText("" + dni1.getText());
-			panelUsuario.add(NmbreBorrar);
-			panelUsuario.add(Box.createRigidArea(new Dimension(0, 3)));
-
-			JButton si = new JButton("Si");
-			si.setAlignmentX(Component.CENTER_ALIGNMENT);
-			si.setMaximumSize(new Dimension(50, 25));
-			panelUsuario.add(si);
-			panelUsuario.add(Box.createRigidArea(new Dimension(0, 3)));
-
-			JButton no = new JButton("No");
-			no.setAlignmentX(Component.CENTER_ALIGNMENT);
-			no.setMaximumSize(new Dimension(50, 25));
-			panelUsuario.add(no);
-			panelUsuario.add(Box.createRigidArea(new Dimension(0, 3)));
-			marcoBorrar.setVisible(true);
-
-			si.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-
-					try {
-						j = tabla.getSelectedRow();
-						int aux = (Integer) dtm.getValueAt(j, 0);
-						new MisConexiones().Borrar(ConfigDir.getInstance().getProperty("consulta17"), aux).execute();
-
-					} catch (Exception e1) {
-						e1.printStackTrace();
-
-					}
-
-					marcoBorrar.setVisible(false);
-					marcoBorrar.dispose();
-				}
-			});
-			no.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					marcoBorrar.setVisible(false);
-					marcoBorrar.dispose();
-					marcoBorrar.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				}
-			});
-
+			dtm.setRowCount(0);
+			c1.setText("");
+			c2.setText("");
+			dni1.setText("");
+			dni2.setText("");
+			domicilio.setText("");
+			fecha.setText("");
+			asunto.getSelectedItem();
+			email.getSelectedItem();
+			receptor.getSelectedItem();
+			telefono.setText("");
+			email1.setText("");
+			ciudad.setText("");
 		}
 	}// fin del borrar
 
@@ -429,26 +377,4 @@ public class PanelEncargos extends JPanel implements Serializable {
 		return v;
 	}// fin del dameNombre
 	
-	public class GestorTabla extends MouseAdapter {
-		public void mouseReleased(MouseEvent e) {
-			int j = tabla.getSelectedRow();
-			/*String entero = (String) dtm.getValueAt(j, 0);
-			receptor.setText("" + entero);*/
-			String DEntero = (String) dtm.getValueAt(j, 1);
-			fecha.setText("" + DEntero);
-			String NomEntero = (String) dtm.getValueAt(j, 2);
-			c1.setText("" + NomEntero);
-			String ApEntero = (String) dtm.getValueAt(j, 3);
-			dni1.setText("" + ApEntero);
-			/*int TlfEntero = (int) dtm.getValueAt(j, 4);
-			asunto.setText("" + TlfEntero);*/
-			String EmailEntero = (String) dtm.getValueAt(j, 5);
-			domicilio.setText("" + EmailEntero);
-			String DirEntero = (String) dtm.getValueAt(j, 6);
-			c2.setText("" + DirEntero);
-			String CDEntero = (String) dtm.getValueAt(j, 7);
-			dni2.setText("" + CDEntero);
-			}
-		}//fin del gestor tabla
-
 }
