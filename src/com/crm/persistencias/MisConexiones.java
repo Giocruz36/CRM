@@ -9,19 +9,20 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 
 public class MisConexiones {
-	private static Connection con;
-	private static PreparedStatement ps;
+	private Connection con;
+	private PreparedStatement ps;
 	@SuppressWarnings("unused")
 	private Statement st;
-	private static ResultSet rs;
+	private ResultSet rs;
 	@SuppressWarnings("unused")
 	private String sentencia;
 	@SuppressWarnings("unused")
 	private String parametro;
 	@SuppressWarnings("unused")
 	private String parametro2;
-	private static ConfigDir atrapo;
+	private ConfigDir atrapo;
 
+	@SuppressWarnings("deprecation")
 	public MisConexiones() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
 		atrapo = ConfigDir.getInstance();
 		if (atrapo.getBooleanProperty("check"))
@@ -69,8 +70,9 @@ public class MisConexiones {
 	}
 
 	public PreparedStatement damePSSimple3(String sentencia, String a1, String a2, String n, String d, boolean c1,
-			boolean c2, boolean c3, boolean c4, String pf, String dm, String pb, int cp, Timestamp fa,String fn, int vd, int im,
-			int pt, String dr,String tv, int cg,boolean c5,String ec,String rb,String vc) throws SQLException {
+			boolean c2, boolean c3, boolean c4, String pf, String dm, String pb, int cp, Timestamp fa, String fn,
+			int vd, int im, int pt, String dr, String tv, int cg, boolean c5, String ec, String rb, String vc)
+			throws SQLException {
 		this.sentencia = sentencia;
 		ps = dameConexion().prepareStatement(sentencia);
 		ps.setString(1, a1);
@@ -93,10 +95,25 @@ public class MisConexiones {
 		ps.setString(18, dr);
 		ps.setString(19, tv);
 		ps.setInt(20, cg);
-		ps.setBoolean(21,c5);
-		ps.setString(22,ec);
-		ps.setString(23,rb);
-		ps.setString(24,vc);
+		ps.setBoolean(21, c5);
+		ps.setString(22, ec);
+		ps.setString(23, rb);
+		ps.setString(24, vc);
+		return ps;
+	}
+
+	public PreparedStatement damePSSimple4(String sentencia, String r, Timestamp fc, String c1, String d1, String a,
+			String dom, String c2, String d2) throws SQLException {
+		this.sentencia = sentencia;
+		ps = dameConexion().prepareStatement(sentencia);
+		ps.setString(1, r);
+		ps.setTimestamp(2, fc);
+		ps.setString(3, c1);
+		ps.setString(4, d1);
+		ps.setString(5, a);
+		ps.setString(6, dom);
+		ps.setString(7, c2);
+		ps.setString(8, d2);
 		return ps;
 	}
 

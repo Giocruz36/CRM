@@ -909,7 +909,7 @@ public class PanelHipoteca extends JPanel implements Serializable {
 			destino.close();
 			ini.delete();
 		}
-	}// gestor imprimir
+	}// final gestor imprimir
 
 	public class GestorTabla extends MouseAdapter {
 		public void mouseReleased(MouseEvent e) {

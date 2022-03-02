@@ -194,7 +194,7 @@ public class PanelClientes extends JPanel implements Serializable, Servicios {
 		JButton ver = new JButton("Ver");
 		ver.addActionListener(new GestorVer());
 		JButton add = new JButton("Añadir");
-		add.addActionListener(new GestorVer());
+		add.addActionListener(new GestorAñadir());
 		JButton br = new JButton("Borrar");
 		br.addActionListener(new GestorBorrar());
 		JButton act = new JButton("Acutalizar");
@@ -442,7 +442,7 @@ public class PanelClientes extends JPanel implements Serializable, Servicios {
 			});
 
 		}
-	}
+	}//fin del borrar
 
 	public class GestorTabla extends MouseAdapter {
 		public void mouseReleased(MouseEvent e) {
