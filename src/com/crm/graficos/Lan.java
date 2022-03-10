@@ -57,9 +57,9 @@ public class Lan {
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		// panel con varias pestañas
 		JTabbedPane pestanias = new JTabbedPane();
-		pestanias.add("Directorio de Cliente", new PanelClientes());
-		pestanias.add("Peticion de Hipoteca", new PanelHipoteca());
-		pestanias.add("Requisitos", new PanelRequisitos());
+		//pestanias.add("Directorio de Cliente", new PanelClientes());
+		//pestanias.add("Peticion de Hipoteca", new PanelHipoteca());
+		//pestanias.add("Requisitos", new PanelRequisitos());
 		pestanias.add("Encargos", new PanelEncargos());
 		// lo metemos en el frame (aqui se visualiza)
 		marco.getContentPane().add(pestanias);
